@@ -64,7 +64,6 @@ public class RandColor {
 				System.out.println(randC.get(8));
 				randC.remove(8);
 			}
-			System.out.println(randC);
 		}
 		
 		/*if(rand1==0) {
