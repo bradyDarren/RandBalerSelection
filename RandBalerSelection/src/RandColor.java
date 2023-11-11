@@ -7,6 +7,9 @@ public class RandColor {
 	Random rand = new Random(); 
 	int rand1;
 	int rand2; // Test
+	int x;
+	int y;
+
 	public void Color() { 
 			
 		HashMap<Integer,String> randC = new HashMap<>();
@@ -21,12 +24,16 @@ public class RandColor {
 		randC.put(7, "Orange");
 		randC.put(8, "Orange");
 		
-		System.out.println(randC.size());
+		//System.out.println(randC.size());
+		//System.out.println(randC);
+		
+		x = rand.nextInt(randC.size());
+		
+		System.out.println(x);
+		randC.remove(x);
 		System.out.println(randC);
-		
-		rand1 = rand.nextInt(1);
-		
-		for(int i=0; i<10;i++) { // Test
+	
+		/*for(int i=0; i<10;i++) { // Test
 			rand2 = rand.nextInt(9);
 			if(rand2==0) { 
 				System.out.println(randC.get(0));
@@ -64,32 +71,7 @@ public class RandColor {
 				System.out.println(randC.get(8));
 				randC.remove(8);
 			}
-		}
-		
-		/*if(rand1==0) {
-			System.out.println(randC.get(1));
-			randC.remove(0);
-		}
-		System.out.println(randC);*/
-		
-		//if(rand1==randC.)
-
-		/*for(int i=0; i<10;i++) {
-			rand1 = rand.nextInt(4);
-			if(rand1==0) {
-				System.out.println("Green");
-			}
-			else if(rand1==1) {
-				System.out.println("Green");
-			}
-			else if(rand1==2) {
-				System.out.println("Blue");
-			}
-			else if(rand1==3) {
-				System.out.println("Orange");
-			}
 		}*/
-		
 	}
 	
 }

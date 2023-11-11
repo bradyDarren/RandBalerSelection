@@ -4,9 +4,10 @@ import java.util.Random;
 public class RandColor2 {
 
 	
+	
 	public void Color() {
 		
-		String x;
+		int x;
 		
 		ArrayList <String> list = new ArrayList<>();
 		
@@ -22,8 +23,24 @@ public class RandColor2 {
 		
 		Random randN = new Random();
 		
-		x = list.get(randN.nextInt(list.size()));
+		System.out.println(list);
 		
+		for(int i = 0; i <9;i++) {
+			x = randN.nextInt(list.size());
+			System.out.println(list.get(x));
+			list.remove(x);
+			System.out.println(list);
+		}
+		
+		/*System.out.println(list);
+		
+		x = randN.nextInt(list.size());
+		
+		System.out.println(list.get(x));
+		
+		list.remove(x);
+		
+		System.out.println(list);
 		/*int x;
 		int max = 8;
 		int min = 0;
