@@ -32,7 +32,15 @@ public class Frame extends JFrame{
 	JLabel l8;
 	JLabel l9;
 	
-	String s1; 
+	String s1;
+	String s2; 
+	String s3; 
+	String s4; 
+	String s5; 
+	String s6; 
+	String s7; 
+	String s8;
+	String s9; 
 	
 	JButton button1;//declaration of our button within our window.
 	JButton button2; 
@@ -58,10 +66,35 @@ public class Frame extends JFrame{
 		instr.setFont(new Font ("MV Boli",Font.BOLD,16));
 		this.add(instr);
 		
-		l1 = new JLabel();
-		l1.setBounds(450,400,175,50);
-		
+		l1 = new JLabel();		
+		l2 = new JLabel();
+		l3 = new JLabel();
+		l4 = new JLabel();
+		l5 = new JLabel();
+		l6 = new JLabel();
+		l7 = new JLabel();
+		l8 = new JLabel();
+		l9 = new JLabel();
+
+		l1.setBounds(950,400,175,50);
+		l2.setBounds(950,455,175,50);
+		l3.setBounds(950,510,175,50);
+		l4.setBounds(950,565,175,50);
+		l5.setBounds(1125,400,175,50);
+		l6.setBounds(1125,455,175,50);
+		l7.setBounds(1125,510,175,50);
+		l8.setBounds(1125,565,175,50);
+		l9.setBounds(1040,620,175,50);
+
 		this.add(l1);
+		this.add(l2);
+		this.add(l3);
+		this.add(l4);
+		this.add(l5);
+		this.add(l6);
+		this.add(l7);
+		this.add(l8);
+		this.add(l9);
 		
 		button1 = new JButton("Submit!!!");
 		button2 = new JButton("Clear!!!");
@@ -74,12 +107,23 @@ public class Frame extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource()==button1) {
-					//Results();
+					Results();
 				}
 			}
 			
 		});
 
+		button2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource()==button2) {
+					Clear();
+				}
+			}
+			
+		});
+		
 		this.add(button1);
 		this.add(button2);
 		
@@ -117,8 +161,44 @@ public class Frame extends JFrame{
 
 		
 	}
-	/*public void Results() {
+	public void Results() {
 		s1 = f1.getText();
 		l1.setText(s1);
-	}*/
+		s2 = f2.getText();
+		l2.setText(s2);
+		s3 = f3.getText();
+		l3.setText(s3);
+		s4 = f4.getText();
+		l4.setText(s4);
+		s5 = f5.getText();
+		l5.setText(s5);
+		s6 = f6.getText();
+		l6.setText(s6);
+		s7 = f7.getText();
+		l7.setText(s7);
+		s8 = f8.getText();
+		l8.setText(s8);
+		s9 = f9.getText();
+		l9.setText(s9);
+	}
+	public void Clear() {
+		s1 = f1.getText();
+		l1.setText("");
+		s2 = f2.getText();
+		l2.setText("");
+		s3 = f3.getText();
+		l3.setText("");
+		s4 = f4.getText();
+		l4.setText("");
+		s5 = f5.getText();
+		l5.setText("");
+		s6 = f6.getText();
+		l6.setText("");
+		s7 = f7.getText();
+		l7.setText("");
+		s8 = f8.getText();
+		l8.setText("");
+		s9 = f9.getText();
+		l9.setText("");
+	}
 }
