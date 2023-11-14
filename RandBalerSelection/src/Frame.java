@@ -10,7 +10,8 @@ import javax.swing.*;
 
 public class Frame extends JFrame{
 	
-	JTextField f1;//declaration of all of our text Fields.
+	//declaration of text fields for user input
+	JTextField f1;
 	JTextField f2; 
 	JTextField f3; 
 	JTextField f4; 
@@ -20,9 +21,11 @@ public class Frame extends JFrame{
 	JTextField f8; 
 	JTextField f9; 
 	
-	ImageIcon HEB;//declaration of our ImageIcon displayed within our GUI window. 
+	//declaration of our ImageIcon displayed within our GUI window. 
+	ImageIcon HEB;
 	
-	JLabel label;//declaration of our labels within our GUI window.
+	//declaration of our labels within our GUI window.
+	JLabel label;//this label houses our logo at the top of the GUI Window. 
 	JLabel instr;
 	JLabel l1; 
 	JLabel l2; 
@@ -34,6 +37,7 @@ public class Frame extends JFrame{
 	JLabel l8;
 	JLabel l9;
 	
+	// declaration of our Strings used to transfer info from our TextFields to our Labels.
 	String s1;
 	String s2; 
 	String s3; 
@@ -44,9 +48,11 @@ public class Frame extends JFrame{
 	String s8;
 	String s9; 
 	
-	JButton button1;//declaration of our button within our window.
+	//declaration of our buttons within our window.
+	JButton button1;
 	JButton button2; 
 	
+	//declaration of our integers to house our instances of our random numbers.
 	int x1; 
 	int x2; 
 	int x3; 
@@ -58,13 +64,16 @@ public class Frame extends JFrame{
 	int x9; 
 	
 	Frame(){ 
-				
+		
+		//designation of a image to our ImageIcon previously declared. 
 		HEB = new ImageIcon("HEB.jpeg");
 		
+		//attributes of our label that houses our Logo. 
 		label = new JLabel();
 		label.setIcon(HEB);
 		label.setBounds(52,0,1400,345);
 
+		//Attributes of the our GUI frame. 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("RGC DAILY ASSIGNMENTS");
 		this.setSize(1500, 1050);
@@ -73,11 +82,14 @@ public class Frame extends JFrame{
 		this.setLocationRelativeTo(null);
 		this.add(label);
 		
+		//Instructions above out TextFields to notify the user of what to do. 
 		instr = new JLabel("Please input the name of the partners within the boxes below:");
 		instr.setBounds(25,350,510,75);
 		instr.setFont(new Font ("MV Boli",Font.BOLD,16));
+		instr.setForeground(Color.red);
 		this.add(instr);
 		
+		//designation of our new Labels 
 		l1 = new JLabel();		
 		l2 = new JLabel();
 		l3 = new JLabel();
@@ -88,6 +100,7 @@ public class Frame extends JFrame{
 		l8 = new JLabel();
 		l9 = new JLabel();
 
+		//designation of the position of our labels on our Frame. 
 		l1.setBounds(950,400,175,50);
 		l2.setBounds(950,455,175,50);
 		l3.setBounds(950,510,175,50);
@@ -98,6 +111,7 @@ public class Frame extends JFrame{
 		l8.setBounds(1125,565,175,50);
 		l9.setBounds(1040,620,175,50);
 		
+		//calling our our Color method below.
 		Color();
 
 		l1.setFont(new Font("MV Boli",Font.BOLD,25));
@@ -225,8 +239,10 @@ public class Frame extends JFrame{
 	}
 	public void Color() {
 		
+		//creation of a ArrayList to house our selection pool. 
 		ArrayList <String> list = new ArrayList<>();
 		
+		//adding in the possible selections into our ArrrayList. 
 		list.add("Red");
 		list.add("Red");
 		list.add("Green");
@@ -237,20 +253,23 @@ public class Frame extends JFrame{
 		list.add("Orange");
 		list.add("Orange");
 		
+		//instance of our Random class that will allow us to randomly select
 		Random randN = new Random();
-		System.out.println(list);
-		if(!list.isEmpty()) {
+
+		/*if our Array List is not empty then we will pull a random Index ranging from 0 to 8 (the size of our Array) depending on the index
+		 * that we pull if the color that will be assigned to each text box.*/
+		if(!list.isEmpty()) { 
 			x1=randN.nextInt(list.size());
-			if(x1 == 0 || x1 == 1) {
+			if(list.get(x1)=="Red") {
 			l1.setForeground(Color.RED);
 			}
-			else if(x1 >= 2 && x1 <= 3) {
+			else if(list.get(x1)=="Green") {
 			l1.setForeground(Color.GREEN);
 			}
-			else if(x1 == 4) {
+			else if(list.get(x1)=="Blue") {
 			l1.setForeground(Color.BLUE);
 			}
-			else if(x1 >= 5 && x1 <= 8) {
+			else if(list.get(x1)=="Orange") {
 			l1.setForeground(Color.ORANGE);
 			}
 		}
@@ -259,16 +278,16 @@ public class Frame extends JFrame{
 
 		if(!list.isEmpty()) {
 			x2=randN.nextInt(list.size());
-			if(x2 == 0 || x2 == 1) {
+			if(list.get(x2)=="Red") {
 			l2.setForeground(Color.RED);
 			}
-			else if(x2 >= 2 && x2 <= 3) {
+			else if(list.get(x2)=="Green") {
 			l2.setForeground(Color.GREEN);
 			}
-			else if(x2 == 4) {
+			else if(list.get(x2)=="Blue") {
 			l2.setForeground(Color.BLUE);
 			}
-			else if(x2 >= 5 && x2 <= 8) {
+			else if(list.get(x2)=="Orange") {
 			l2.setForeground(Color.ORANGE);
 			}
 		}
@@ -277,16 +296,16 @@ public class Frame extends JFrame{
 
 		if(!list.isEmpty()) {
 			x3=randN.nextInt(list.size());
-			if(x3 == 0 || x3 == 1) {
+			if(list.get(x3)=="Red") {
 			l3.setForeground(Color.RED);
 			}
-			else if(x3 >= 2 && x3 <= 3) {
+			else if(list.get(x3)=="Green") {
 			l3.setForeground(Color.GREEN);
 			}
-			else if(x3 == 4) {
+			else if(list.get(x3)=="Blue") {
 			l3.setForeground(Color.BLUE);
 			}
-			else if(x3 >= 5 && x3 <= 8) {
+			else if(list.get(x3)=="Orange") {
 			l3.setForeground(Color.ORANGE);
 			}
 		}
@@ -295,16 +314,16 @@ public class Frame extends JFrame{
 		
 		if(!list.isEmpty()) {
 			x4=randN.nextInt(list.size());
-			if(x4 == 0 || x4 == 1) {
+			if(list.get(x4)=="Red") {
 			l4.setForeground(Color.RED);
 			}
-			else if(x4 >= 2 && x4 <= 3) {
+			else if(list.get(x4)=="Green") {
 			l4.setForeground(Color.GREEN);
 			}
-			else if(x4 == 4) {
+			else if(list.get(x4)=="Blue") {
 			l4.setForeground(Color.BLUE);
 			}
-			else if(x4 >= 5 && x4 <= 8) {
+			else if(list.get(x4)=="Orange") {
 			l4.setForeground(Color.ORANGE);
 			}
 		}
@@ -313,16 +332,16 @@ public class Frame extends JFrame{
 
 		if(!list.isEmpty()) {
 			x5=randN.nextInt(list.size());
-			if(x5 == 0 || x5 == 1) {
+			if(list.get(x5)=="Red") {
 			l5.setForeground(Color.RED);
 			}
-			else if(x5 >= 2 && x5 <= 3) {
+			else if(list.get(x5)=="Green") {
 			l5.setForeground(Color.GREEN);
 			}
-			else if(x5 == 4) {
+			else if(list.get(x5)=="Blue") {
 			l5.setForeground(Color.BLUE);
 			}
-			else if(x5 >= 5 && x5 <= 8) {
+			else if(list.get(x5)=="Orange") {
 			l5.setForeground(Color.ORANGE);
 			}
 		}
@@ -331,16 +350,16 @@ public class Frame extends JFrame{
 
 		if(!list.isEmpty()) {
 			x6=randN.nextInt(list.size());
-			if(x6 == 0 || x6 == 1) {
+			if(list.get(x6)=="Red") {
 			l6.setForeground(Color.RED);
 			}
-			else if(x6 >= 2 && x6 <= 3) {
+			else if(list.get(x6)=="Green") {
 			l6.setForeground(Color.GREEN);
 			}
-			else if(x6 == 4) {
+			else if(list.get(x6)=="Blue") {
 			l6.setForeground(Color.BLUE);
 			}
-			else if(x6 >= 5 && x6 <= 8) {
+			else if(list.get(x6)=="Orange") {
 			l6.setForeground(Color.ORANGE);
 			}
 		}
@@ -349,16 +368,16 @@ public class Frame extends JFrame{
 
 		if(!list.isEmpty()) {
 			x7=randN.nextInt(list.size());
-			if(x7 == 0 || x7 == 1) {
+			if(list.get(x7)=="Red") {
 			l7.setForeground(Color.RED);
 			}
-			else if(x7 >= 2 && x7 <= 3) {
+			else if(list.get(x7)=="Green") {
 			l7.setForeground(Color.GREEN);
 			}
-			else if(x7 == 4) {
+			else if(list.get(x7)=="Blue") {
 			l7.setForeground(Color.BLUE);
 			}
-			else if(x7 >= 5 && x7 <= 8) {
+			else if(list.get(x7)=="Orange") {
 			l7.setForeground(Color.ORANGE);
 			}
 		}
@@ -367,16 +386,16 @@ public class Frame extends JFrame{
 
 		if(!list.isEmpty()) {
 			x8=randN.nextInt(list.size());
-			if(x8 == 0 || x8 == 1) {
+			if(list.get(x8)=="Red") {
 			l8.setForeground(Color.RED);
 			}
-			else if(x8 >= 2 && x8 <= 3) {
+			else if(list.get(x8)=="Green") {
 			l8.setForeground(Color.GREEN);
 			}
-			else if(x8 == 4) {
+			else if(list.get(x8)=="Blue") {
 			l8.setForeground(Color.BLUE);
 			}
-			else if(x8 >= 5 && x8 <= 8) {
+			else if(list.get(x8)=="Orange") {
 			l8.setForeground(Color.ORANGE);
 			}
 		}
@@ -385,16 +404,16 @@ public class Frame extends JFrame{
 
 		if(!list.isEmpty()) {
 			x9=randN.nextInt(list.size());
-			if(x9 == 0 || x9 == 1) {
+			if(list.get(x9)=="Red") {
 			l9.setForeground(Color.RED);
 			}
-			else if(x9 >= 2 && x9 <= 3) {
+			else if(list.get(x9)=="Green") {
 			l9.setForeground(Color.GREEN);
 			}
-			else if(x9 == 4) {
+			else if(list.get(x9)=="Blue") {
 			l9.setForeground(Color.BLUE);
 			}
-			else if(x9 >= 5 && x9 <= 8) {
+			else if(list.get(x9)=="Orange") {
 			l9.setForeground(Color.ORANGE);
 			}
 		}
