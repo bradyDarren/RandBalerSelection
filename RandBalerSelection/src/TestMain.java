@@ -6,9 +6,9 @@ public class TestMain {
 		//RandColor color = new RandColor();
 		//color.Color();
 		
-		RandColor2 color = new RandColor2();
+		//RandColor2 color = new RandColor2();
 		
-		color.Color();
+		//color.Color();
 		
 	}
 
